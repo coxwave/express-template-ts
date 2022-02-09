@@ -22,6 +22,7 @@ export const errorConverter = (err: any, _req: Request, _res: Response, next: Ne
 export const errorHandler = (err: ApiError, _req: Request, res: Response, _next: NextFunction) => {
   res.locals.errorMessage = err.message;
 
+  /* istanbul ignore next */
   if (env === 'development') {
     logger.error(err);
   } else if (env === 'production') {

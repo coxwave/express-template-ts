@@ -23,6 +23,7 @@ export const ERRORS = {
 
 type ErrorName = keyof typeof ERRORS;
 
+/* istanbul ignore next */
 export class ApiError extends Error {
   name: ErrorName;
   message: string;

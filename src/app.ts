@@ -14,6 +14,7 @@ import routerV1 from '@routes/v1';
 
 const app = express();
 
+/* istanbul ignore next */
 if (env !== 'test') {
   app.use(successLogger);
   app.use(errorLogger);

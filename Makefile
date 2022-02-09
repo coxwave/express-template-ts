@@ -11,3 +11,6 @@ start:
 
 dev:
 	tsc -w & nodemon src/index
+
+test:
+	jest --config ./jest.config.js
