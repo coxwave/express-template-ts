@@ -55,6 +55,7 @@
     "@config": "./dist/config",
     "@middlewares": "./dist/middlewares",
     "@routes": "./dist/routes",
-    "@utils": "./dist/utils"
+    "@utils": "./dist/utils",
+    "$src/app": "./dist/app"
   }
 }

@@ -7,6 +7,7 @@ module.exports = {
     '@middlewares/(.*)': '<rootDir>/src/middlewares/$1',
     '@routes/(.*)': '<rootDir>/src/routes/$1',
     '@utils/(.*)': '<rootDir>/src/utils/$1',
+    '$src/app': '<rootDir>/src/app',
   },
   moduleDirectories: ['node_modules'],
   testPathIgnorePatterns: [
