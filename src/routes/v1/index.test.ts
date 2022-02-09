@@ -1,7 +1,7 @@
 import { StatusCodes } from 'http-status-codes';
 import * as supertest from 'supertest';
 
-import app from '$src/app';
+import app from '@src/app';
 
 describe('app test', () => {
   let request: supertest.SuperTest<supertest.Test>;

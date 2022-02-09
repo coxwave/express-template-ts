@@ -50,7 +50,7 @@ module.exports = {
             position: 'after',
           },
           {
-            pattern: '$src/**',
+            pattern: '@src/**',
             group: 'internal',
             position: 'after',
           },

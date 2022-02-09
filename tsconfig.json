@@ -17,7 +17,7 @@
       "@middlewares/*": ["src/middlewares/*"],
       "@routes/*": ["src/routes/*"],
       "@utils/*": ["src/utils/*"],
-      "$src/app": ["src/app"]
+      "@src/app": ["src/app"]
     }
   },
   "include": ["src/**/*.ts"],

@@ -6,7 +6,7 @@ import * as https from 'https';
 import { env, httpsPort, port, sslConf } from '@config/env';
 import { logger } from '@config/logger';
 
-import app from '$src/app';
+import app from '@src/app';
 
 const useHttps = env === 'production';
 
