@@ -11,13 +11,18 @@ module.exports = {
   moduleDirectories: ['node_modules'],
   testPathIgnorePatterns: [
     '<rootDir>/node_modules/',
+    '<rootDir>/src/config/',
     '<rootDir>/certs/',
     '<rootDir>/public/',
     '<rootDir>/dist/',
   ],
   globalSetup: './jest/setup.js',
   collectCoverage: true,
-  collectCoverageFrom: ['<rootDir>/src/**/*.ts', '!<rootDir>/src/index.ts'],
+  collectCoverageFrom: [
+    '<rootDir>/src/**/*.ts',
+    '!<rootDir>/src/config/*',
+    '!<rootDir>/src/index.ts',
+  ],
   coverageThreshold: {
     global: {
       branches: 70,
