@@ -34,6 +34,12 @@ app.use(cors());
 // if (env === 'production') {
 // }
 
+// Locals middleware (initialize)
+app.use((req, _res, next) => {
+  req.locals = { hello: 'world' };
+  next();
+});
+
 // Routes
 app.use('/v1', routerV1);
 
