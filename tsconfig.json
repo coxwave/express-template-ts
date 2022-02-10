@@ -18,7 +18,8 @@
       "@routes/*": ["src/routes/*"],
       "@utils/*": ["src/utils/*"],
       "@src/app": ["src/app"]
-    }
+    },
+    "typeRoots": ["node_modules/@types", "src/types"]
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]
