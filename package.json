@@ -43,7 +43,6 @@
     "eslint-plugin-unused-imports": "2.0.0",
     "jest": "27.5.1",
     "jest-environment-node": "27.5.1",
-    "mongodb-memory-server": "8.3.0",
     "nodemon": "2.0.15",
     "prettier": "2.3.2",
     "supertest": "6.2.2",
