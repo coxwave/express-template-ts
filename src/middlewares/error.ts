@@ -1,6 +1,6 @@
 import Joi = require('joi');
 
-import { env } from '@config/env';
+import { ENV } from '@config/ENV';
 import { logger } from '@config/logger';
 
 import { ApiError } from '@utils/api-error';
@@ -23,11 +23,11 @@ export const errorHandler = (err: ApiError, _req: Request, res: Response, _next:
   res.locals.errorMessage = err.message;
 
   /* istanbul ignore next */
-  if (env === 'development') {
+  if (ENV.NODE_ENV === 'development') {
     logger.error(err);
-  } else if (env === 'production') {
+  } else if (ENV.NODE_ENV === 'production') {
     // TODO: logger for production? 🤔
   }
 
-  res.status(err.statusCode).json(err.toJson(env === 'development'));
+  res.status(err.statusCode).json(err.toJson(ENV.NODE_ENV === 'development'));
 };

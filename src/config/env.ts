@@ -8,23 +8,28 @@ const envVarsSchema = Joi.object()
     NODE_ENV: Joi.string().valid('production', 'development', 'test').required(),
     PORT: Joi.number().default(3001),
     HTTPS_PORT: Joi.number().default(3002),
+    DOCS_PORT: Joi.number().default(3333),
     SSL_CERT: Joi.string().default('./certs/localhost.crt'),
     SSL_KEY: Joi.string().default('./certs/localhost.key'),
   })
   .unknown();
 
-const { value: envVars, error } = envVarsSchema
+const { value, error } = envVarsSchema
   .prefs({ errors: { label: 'key' } })
-  .validate(process.env);
+  .validate(process.env) as {
+  value: {
+    NODE_ENV: 'production' | 'development' | 'test';
+    PORT: number;
+    HTTPS_PORT: number;
+    DOCS_PORT: number;
+    SSL_CERT: string;
+    SSL_KEY: string;
+  };
+  error: any;
+};
 
 if (error) {
   throw new Error(`Config validation error: ${error.message}`);
 }
 
-export const env = envVars.NODE_ENV as 'production' | 'development' | 'test';
-export const port = envVars.PORT as number;
-export const httpsPort = envVars.HTTPS_PORT as number;
-export const sslConf = {
-  cert: envVars.SSL_CERT,
-  key: envVars.SSL_KEY,
-} as { cert: string; key: string };
+export const ENV = value;

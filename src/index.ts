@@ -3,21 +3,21 @@ import 'module-alias/register';
 import * as fs from 'fs';
 import * as https from 'https';
 
-import { env, httpsPort, port, sslConf } from '@config/env';
+import { ENV } from '@config/env';
 import { logger } from '@config/logger';
 
 import app from '@src/app';
 
-const useHttps = env === 'production';
+const useHttps = ENV.NODE_ENV === 'production';
 
-app.listen(port, () => {
-  logger.info(`HTTP SERVER LISTENING ON PORT ${port}`);
+app.listen(ENV.PORT, () => {
+  logger.info(`HTTP SERVER LISTENING ON PORT ${ENV.PORT}`);
 });
 
 if (useHttps) {
-  const sslOptions = { key: fs.readFileSync(sslConf.key), cert: fs.readFileSync(sslConf.cert) };
+  const sslOptions = { key: fs.readFileSync(ENV.SSL_KEY), cert: fs.readFileSync(ENV.SSL_CERT) };
 
-  https.createServer(sslOptions, app).listen(httpsPort, () => {
-    logger.info(`HTTPS SERVER LISTENING ON PORT ${httpsPort}`);
+  https.createServer(sslOptions, app).listen(ENV.HTTPS_PORT, () => {
+    logger.info(`HTTPS SERVER LISTENING ON PORT ${ENV.HTTPS_PORT}`);
   });
 }
