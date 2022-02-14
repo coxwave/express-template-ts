@@ -1,5 +1,7 @@
 import 'module-alias/register';
+import * as path from 'path';
 
+import { createDoc } from 'apidoc';
 import * as compression from 'compression';
 import * as express from 'express';
 import helmet from 'helmet';
@@ -10,6 +12,17 @@ import { logger } from '@config/logger';
 import { errorConverter, errorHandler } from '@middlewares/error';
 
 import { ApiError } from '@utils/api-error';
+
+const doc = createDoc({
+  src: path.resolve(__dirname, 'routes'),
+  dest: path.resolve(__dirname, '../docs'),
+});
+
+if (typeof doc !== 'boolean') {
+  logger.info(`apidoc has been successfully created.`);
+  logger.info(doc.data);
+  logger.info(doc.project);
+}
 
 const app = express();
 
