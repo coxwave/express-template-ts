@@ -3,14 +3,14 @@
   "version": "0.1.2",
   "repository": "https://github.com/coxwave/express-template-ts.git",
   "license": "MIT",
-  "private": false,
+  "private": true,
   "scripts": {
     "dev": "NODE_ENV=development make dev",
     "build": "make build",
     "start": "NODE_ENV=production make start",
     "docs-build": "make docs-build",
     "docs-dev": "NODE_ENV=development make docs-dev",
-    "docs-start": "make docs-start",
+    "docs-start": "NODE_ENV=production make docs-start",
     "clean": "make clean",
     "test": "NODE_ENV=test make test"
   },
