@@ -23,6 +23,7 @@ module.exports = {
     '<rootDir>/src/**/*.ts',
     '!<rootDir>/src/config/*',
     '!<rootDir>/src/index.ts',
+    '!<rootDir>/src/docs.ts',
   ],
   coverageThreshold: {
     global: {
