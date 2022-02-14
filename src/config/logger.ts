@@ -1,13 +1,13 @@
 import { createLogger, transports, format } from 'winston';
 
-import { env } from './env';
+import { ENV } from './env';
 
 // https://docs.datadoghq.com/logs/log_collection/nodejs/?tab=winston30
 export const logger = createLogger({
-  level: env === 'development' ? 'debug' : 'info',
+  level: ENV.NODE_ENV === 'development' ? 'debug' : 'info',
   exitOnError: false,
   format:
-    env === 'development'
+    ENV.NODE_ENV === 'development'
       ? format.combine(
           format.colorize(),
           format.splat(),

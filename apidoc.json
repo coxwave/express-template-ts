@@ -1,0 +1,8 @@
+{
+  "name": "express-template-ts",
+  "version": "0.1.2",
+  "description": "template server using express.js",
+  "title": "My Api Server",
+  "url": "http://localhost:3001",
+  "sampleUrl": null
+}

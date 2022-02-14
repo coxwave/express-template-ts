@@ -1,7 +1,6 @@
 {
   "name": "express-template-ts",
   "version": "0.1.2",
-  "main": "src/index.ts",
   "repository": "https://github.com/coxwave/express-template-ts.git",
   "license": "MIT",
   "private": false,
@@ -9,10 +8,14 @@
     "dev": "NODE_ENV=development make dev",
     "build": "make build",
     "start": "NODE_ENV=production make start",
+    "docs-build": "make docs-build",
+    "docs-dev": "NODE_ENV=development make docs-dev",
+    "docs-start": "make docs-start",
     "clean": "make clean",
     "test": "NODE_ENV=test make test"
   },
   "dependencies": {
+    "apidoc": "0.29.0",
     "compression": "1.7.4",
     "cors": "2.8.5",
     "dotenv": "16.0.0",

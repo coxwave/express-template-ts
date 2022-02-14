@@ -16,3 +16,6 @@ coverage
 
 # Certificates
 /certs
+
+# Docs
+/docs

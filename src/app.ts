@@ -3,7 +3,7 @@ import * as cors from 'cors';
 import * as express from 'express';
 import helmet from 'helmet';
 
-import { env } from '@config/env';
+import { ENV } from '@config/env';
 import { successLogger, errorLogger } from '@config/morgan';
 
 import { errorConverter, errorHandler } from '@middlewares/error';
@@ -15,7 +15,7 @@ import routerV1 from '@routes/v1';
 const app = express();
 
 /* istanbul ignore next */
-if (env !== 'test') {
+if (ENV.NODE_ENV !== 'test') {
   app.use(successLogger);
   app.use(errorLogger);
 }
